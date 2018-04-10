@@ -2,10 +2,10 @@
 # Name: GDAX-Fills-GainLoss.ps1                                                                                                  #
 # Date Written: 04/10/18                                                                                                         #
 # Written By: @weedoveropaites (Twitter)                                                                                         #
-# Usage: Run ./GDAX-fills.ps1 from the same folder as your fills.csv file, which it uses for input. When the script completes it #
-#        will output a file called fills-out.csv with a new column titled gainloss. It will show your gain or loss for each sell #
-#        line. You can total that column for the total gains/losses, but the script will also display the total on the screen.   #
-#        If you receive a message that it cannot run because of the Execution Policy, see the *NOTE* below.                      #
+# Usage: Run ./GDAX-Fills-GainLoss.ps1 from the same folder as your fills.csv file, which it uses for input. When the script     #
+#        completes it will output a file called fills-out.csv with a new column titled gainloss. It will show your gain or loss  #
+#        for each sell line. You can total that column for the total gains/losses, but the script will also display the total on #
+#        the screen. If you receive a message that it cannot run because of the Execution Policy, see the *NOTE* below.          #
 #                                                                                                                                #
 # This PowerShell script is designed to convert a GDAX fills.csv exported file into gains and losses using the First In First    #
 # Out (FIFO) accounting method. If your exported fills file from GDAX is missing buys that were transfered in from other places  #
@@ -20,11 +20,11 @@
 # running PowerShell elevated (Run As Administrator), and running the command "Set-ExecutionPolicy RemoteSigned" and saying Yes  #
 # to the warning. You can then run the script as a regular user, it must be run in the same folder as fills.csv.                 #
 #                                                                                                                                #
-# GDAX-Fills.ps1 is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as #
-# published by the Free Software Foundation, either version 3 of the License, or any later version.                              #
+# GDAX-Fills-GainLoss.ps1 is free software: you can redistribute it and/or modify it under the terms of the GNU General Public   #
+# License as published by the Free Software Foundation, either version 3 of the License, or any later version.                   #
 #                                                                                                                                #
-# GDAX-Fills.ps1 is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty  #
-# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details                    #
+# GDAX-Fills-GainLoss.ps1 is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied  #
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details           #
 # (http://www.gnu.org/licenses/).                                                                                                #
 ##################################################################################################################################
 

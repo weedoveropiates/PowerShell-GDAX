@@ -1,7 +1,7 @@
 ﻿##################################################################################################################################
 # Name: GDAX-Fills-GainLoss.ps1                                                                                                  #
 # Date Written: 04/10/18                                                                                                         #
-# Written By: @weedoveropaites (Twitter)                                                                                         #
+# Written By: @weedoveropiates (Twitter)                                                                                         #
 # Usage: Run ./GDAX-Fills-GainLoss.ps1 from the same folder as your fills.csv file, which it uses for input. When the script     #
 #        completes it will output a file called fills-out.csv with a new column titled gainloss. It will show your gain or loss  #
 #        for each sell line. You can total that column for the total gains/losses, but the script will also display the total on #

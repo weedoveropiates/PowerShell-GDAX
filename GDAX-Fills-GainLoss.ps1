@@ -1,6 +1,7 @@
 ﻿##################################################################################################################################
 # Name: GDAX-Fills-GainLoss.ps1                                                                                                  #
 # Date Written: 04/10/18                                                                                                         #
+# Version: 1.1 (Revised 04/16/18)                                                                                                #
 # Written By: @weedoveropiates (Twitter)                                                                                         #
 # Usage: Run ./GDAX-Fills-GainLoss.ps1 from the same folder as your fills.csv file, which it uses for input. When the script     #
 #        completes it will output a file called fills-out.csv with a new column titled gainloss. It will show your gain or loss  #
@@ -47,8 +48,8 @@ foreach ($line in $fills)
         $newcoin = New-Object -TypeName PSObject
         Add-Member -InputObject $newcoin -Name quantity -MemberType NoteProperty -Value 0
         Add-Member -InputObject $newcoin -Name price -MemberType NoteProperty -Value 1
-        $newcoin.price = $line.price
-        $newcoin.quantity = $line.size
+        $newcoin.price = [decimal]$line.price
+        $newcoin.quantity = [decimal]$line.size
         $q.Enqueue($newcoin)
     } elseif ($line.side -eq "SELL")
     {
@@ -71,11 +72,11 @@ foreach ($line in $fills)
             $line.gainloss = ($line.price - $currentsell.price) * $line.size
         } else
         {
-            $remainder.remainder = $line.size
+            $remainder.remainder = [decimal]$line.size
             $remainder.gainsofar = 0
             do
             {
-                if ($remainder.remainder -ge $currentsell.quantity)
+                if ($remainder.remainder -gt $currentsell.quantity)
                 {
                     $remainder.remainder = $remainder.remainder - $currentsell.quantity
                     $remainder.gainsofar = $remainder.gainsofar + (($line.price - $currentsell.price) * $currentsell.quantity)
